@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>W02: Task2</title>
+  </head>
+  <body>
+    <form name="FORM">
+      x0:<input type="number" name="x0" value=""><br>
+      y0:<input type="number" name="y0" value=""><br>
+      z0:<input type="number" name="z0" value=""><br>
+      x1:<input type="number" name="x1" value=""><br>
+      y1:<input type="number" name="y1" value=""><br>
+      z1:<input type="number" name="z1" value=""><br>
+      x2:<input type="number" name="x2" value=""><br>
+      y2:<input type="number" name="y2" value=""><br>
+      z2:<input type="number" name="z2" value=""><br>
+      <input type="button" value="enter" onclick="Button()"><br>
+      area:<input type="number" name="S" value="">
+    </form>
+    <script src="vec3.js"></script>
+    <script>
+      function Button(){
+        var x0=FORM.x0.value,y0=FORM.y0.value,z0=FORM.z0.value;
+        var x1=FORM.x1.value,y1=FORM.y1.value,z1=FORM.z1.value;
+        var x2=FORM.x2.value,y2=FORM.y2.value,z2=FORM.z2.value;
+        var v0=new Vec3(x0,y0,z0);
+        var v1=new Vec3(x1,y1,z1);
+        var v2=new Vec3(x2,y2,z2);
+        FORM.S.value =AreaOfTriangle(v0,v1,v2);
+      }
+    </script>
+  </body>
+</html>
