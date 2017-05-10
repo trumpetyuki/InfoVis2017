@@ -166,7 +166,7 @@ function main()
 	var raycaster = new THREE.Raycaster( origin, direction );
 	var intersects = raycaster.intersectObject( cube );
 	if ( intersects.length > 0 )
-	{
+	{  
 	    intersects[0].face.color.setRGB( 1, 0, 0 );
 	    intersects[0].object.geometry.colorsNeedUpdate = true;
 	}
