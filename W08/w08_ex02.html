@@ -29,13 +29,13 @@ vec3 PhongReflection( vec3 C, vec3 L, vec3 N ,vec3 V) {
 	  
 	  void main()
 	  {
-	  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+	  point_position = /*projectionMatrix **/ modelViewMatrix * vec4( position, 1.0 );
 	  normal_vector = normalMatrix * normal;
 	  vec3 C = color;
 		   vec3 L = normalize( light_position - point_position.xyz );
 		   vec3 V= normalize( camera_position - point_position.xyz );
 	  vec3 N = normalize( normal_vector );
-	  point_color = LambertianReflection( C, L, N );
+	  point_color = PhongReflection( C, L, N ,V);
 	  gl_Position = projectionMatrix * point_position;
 	  }
 	</script>
